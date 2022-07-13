@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 // Components
 import Label from "../../Components/Label/Label";
+import Description from "../../Components/Description/Description";
 import OtherTitle from "../../Components/OtherTitle/OtherTitle";
 import IngredientPicture from "../../Components/IngredientPicture/IngredientPicture";
 
@@ -117,7 +118,7 @@ function Home() {
               />
 
               {selectedRecipe.description && (
-                <p className="description-text">{selectedRecipe.description}</p>
+                <Description text={selectedRecipe.description} />
               )}
 
               {selectedRecipe.description && (

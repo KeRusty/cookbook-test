@@ -4,7 +4,7 @@ import React from "react";
 import "./Label.scss";
 
 function Label({ label, author }) {
-  return <h1 className="title-text">{`${label} by ${author}`}</h1>;
+  return <h1 className="title-text">{label ? `${label} by ${author}` : ``}</h1>;
 }
 
 export default Label;
