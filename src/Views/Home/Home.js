@@ -113,7 +113,9 @@ const Home = () => {
         >
           {selectedRecipe && (
             <div className="recipe-container">
-              <h1>Please Select a Receipe from the left</h1>
+              <h1 className="heading-text">
+                Please Select a Receipe from the left
+              </h1>
               <img
                 src={selectedRecipe.image ?? Placeholder}
                 width={400}
@@ -121,20 +123,20 @@ const Home = () => {
               />
               <div className="text-container">
                 <h1 className="title-text">{selectedRecipe.label}</h1>
-                <p>{selectedRecipe.description}</p>
-                <p>
+                <p className="description-text">{selectedRecipe.description}</p>
+                <p className="mainIngredients-text">
                   {selectedRecipe.mainIngredients
-                    ? `Main Ingredients: ${selectedRecipe.mainIngredients}`
+                    ? `What are the main Ingredients: ${selectedRecipe.mainIngredients}`
                     : ``}
                 </p>
-                <p>
+                <p className="subIngredients-text">
                   {selectedRecipe.subIngredients
-                    ? `Other Ingredients: ${selectedRecipe.subIngredients}`
+                    ? `All the other Ingredients: ${selectedRecipe.subIngredients}`
                     : ``}
                 </p>
-                <p>
+                <p className="instructions-text">
                   {selectedRecipe.instructions
-                    ? `How to Cook: ${selectedRecipe.instructions}`
+                    ? `How to Cook this item?: ${selectedRecipe.instructions}`
                     : ``}
                 </p>
               </div>
