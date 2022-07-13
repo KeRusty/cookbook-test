@@ -24,19 +24,18 @@
   background: #fff;
 }
 
-.image {
-  width: 300px;
-  height: 200px;
+.divider-container {
+  margin: 22px 0;
 }
 
 .text-container {
   margin: 10px 0;
 }
 
-.title-text {
-  font-size: 32px;
+.divider-text {
+  font-size: 25px;
   font-weight: bold;
-  color: #1f2d50;
+  color: #1890ff;
 }
 
 .heading-text {
@@ -51,20 +50,8 @@
   font-weight: 500;
 }
 
-.mainIngredients-text {
+.other-title-text {
   font-size: 15px;
   color: black;
-  font-weight: 500;
-}
-
-.subIngredients-text {
-  font-size: 15px;
-  color: black;
-  font-weight: 500;
-}
-
-.instructions-text {
-  font-size: 15px;
-  color: black;
-  font-weight: 500;
+  font-weight: 700;
 }
