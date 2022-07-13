@@ -8,6 +8,9 @@ import Cheeseburger from "../../Assets/img/cheeseburger.png";
 import FriedChicken from "../../Assets/img/fried-chicken.png";
 import ChickenCurry from "../../Assets/img/chicken-curry.png";
 
+// styles
+import "./Home.scss";
+
 const { Sider, Content } = Layout;
 
 const recipes = [
@@ -18,7 +21,11 @@ const recipes = [
     label: "Chicken Curry",
     description: "Delicious spicy chicken curry",
     image: ChickenCurry,
-    ingredients: "",
+    mainIngredients: "One Whole Chicken",
+    subIngredients:
+      "Water, Curry Powder, Chillies, Tomatoes, Water, Onion, Garlic",
+    instructions:
+      "Heat the butter in a large frying pan over medium-high heat, then add the chicken and cook until it browns....",
   },
   {
     key: "2",
@@ -27,7 +34,11 @@ const recipes = [
     label: "Hamburger",
     description: "Juicy burger with toppings and a soft bun",
     image: Hamburger,
-    ingredients: "",
+    mainIngredients: "Burger Buns",
+    subIngredients:
+      "Water, Curry Powder, Chillies, Tomatoes, Water, Onion, Garlic",
+    instructions:
+      "Heat the butter in a large frying pan over medium-high heat, then add the chicken and cook until it browns....",
   },
   {
     key: "3",
@@ -36,7 +47,11 @@ const recipes = [
     label: "Friend Chicken",
     description: "American style friend chicken with the condiments",
     image: FriedChicken,
-    ingredients: "",
+    mainIngredients: "One Whole Chicken",
+    subIngredients:
+      "Water, Curry Powder, Chillies, Tomatoes, Water, Onion, Garlic",
+    instructions:
+      "Heat the butter in a large frying pan over medium-high heat, then add the chicken and cook until it browns....",
   },
   {
     key: "4",
@@ -45,7 +60,11 @@ const recipes = [
     label: "Cheeseburger",
     description: "Juicy Cheese burger with three toppings and a soft bun",
     image: Cheeseburger,
-    ingredients: "",
+    mainIngredients: "Burger Buns",
+    subIngredients:
+      "Water, Curry Powder, Chillies, Tomatoes, Water, Onion, Garlic",
+    instructions:
+      "Heat the butter in a large frying pan over medium-high heat, then add the chicken and cook until it browns....",
   },
 ];
 
@@ -93,13 +112,32 @@ const Home = () => {
           }}
         >
           {selectedRecipe && (
-            <div>
+            <div className="recipe-container">
+              <h1>Please Select a Receipe from the left</h1>
               <img
                 src={selectedRecipe.image ?? Placeholder}
                 width={400}
                 height={250}
               />
-              <p>{selectedRecipe.description}</p>
+              <div className="text-container">
+                <h1 className="title-text">{selectedRecipe.label}</h1>
+                <p>{selectedRecipe.description}</p>
+                <p>
+                  {selectedRecipe.mainIngredients
+                    ? `Main Ingredients: ${selectedRecipe.mainIngredients}`
+                    : ``}
+                </p>
+                <p>
+                  {selectedRecipe.subIngredients
+                    ? `Other Ingredients: ${selectedRecipe.subIngredients}`
+                    : ``}
+                </p>
+                <p>
+                  {selectedRecipe.instructions
+                    ? `How to Cook: ${selectedRecipe.instructions}`
+                    : ``}
+                </p>
+              </div>
             </div>
           )}
         </Content>
