@@ -1,23 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import "antd/dist/antd.min.css";
 
-const recipes = [
-  {
-    author: "Jim",
-    name: "Chicken Curry",
-    description: "Delicious spicy chicken curry"
-  },
-  {
-    author: "Aravind",
-    name: "Hamburger",
-    description: "Juicy burger with toppings and a soft bun",
-  }
-]
+// Routes
+import Home from "./Views/Home/Home";
 
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
