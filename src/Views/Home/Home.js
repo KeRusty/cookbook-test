@@ -1,6 +1,14 @@
 import { Layout, Menu } from "antd";
 import React, { useEffect, useState } from "react";
-const { Header, Sider, Content } = Layout;
+
+// Assets
+import Placeholder from "../../Assets/img/placeholder.png";
+import Hamburger from "../../Assets/img/hamburger.png";
+import Cheeseburger from "../../Assets/img/cheeseburger.png";
+import FriedChicken from "../../Assets/img/fried-chicken.png";
+import ChickenCurry from "../../Assets/img/chicken-curry.png";
+
+const { Sider, Content } = Layout;
 
 const recipes = [
   {
@@ -9,6 +17,8 @@ const recipes = [
     name: "Chicken Curry",
     label: "Chicken Curry",
     description: "Delicious spicy chicken curry",
+    image: ChickenCurry,
+    ingredients: "",
   },
   {
     key: "2",
@@ -16,6 +26,8 @@ const recipes = [
     name: "Hamburger",
     label: "Hamburger",
     description: "Juicy burger with toppings and a soft bun",
+    image: Hamburger,
+    ingredients: "",
   },
   {
     key: "3",
@@ -23,6 +35,8 @@ const recipes = [
     name: "Fried Chicken",
     label: "Friend Chicken",
     description: "American style friend chicken with the condiments",
+    image: FriedChicken,
+    ingredients: "",
   },
   {
     key: "4",
@@ -30,6 +44,8 @@ const recipes = [
     name: "Cheeseburger",
     label: "Cheeseburger",
     description: "Juicy Cheese burger with three toppings and a soft bun",
+    image: Cheeseburger,
+    ingredients: "",
   },
 ];
 
@@ -76,7 +92,16 @@ const Home = () => {
             minHeight: 280,
           }}
         >
-          {selectedRecipe && <p>{selectedRecipe.description}</p>}
+          {selectedRecipe && (
+            <div>
+              <img
+                src={selectedRecipe.image ?? Placeholder}
+                width={400}
+                height={250}
+              />
+              <p>{selectedRecipe.description}</p>
+            </div>
+          )}
         </Content>
       </Layout>
     </Layout>
